@@ -53,10 +53,22 @@ public class TodoList{
 
     }
 
+    public void showTasks() {
+        if (task.size() == 0) {
+            System.out.println("No tasks pending:)");
+            return
+        }
+
+        System.out.println("ALL TASKS");
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + ". " + tasks.get(i));
+        }
+    }
+
     public void addTask(){
         System.out.println("Enter your new task: ");
         String task = scanner.nextLine();
-        
+
         if (task.length()>0) {
             tasks.add(task);
             System.out.println("Task added!");
@@ -64,4 +76,6 @@ public class TodoList{
         else ("Task cannot be empty!");
         addTask();
     }
+
+
 }
