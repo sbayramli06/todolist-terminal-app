@@ -13,6 +13,32 @@ public class TodoList{
     public void Run(){
         System.out.println("TODO LIST");
 
+        while (true) {
+            showMenu();
+            int choice = getChoice();
+
+            switch (choice) {
+                case 1:
+                    showTasks();
+                    break;
+                case 2:
+                    addTasks();
+                    break;
+                case 3:
+                    removeTasks();
+                    break;
+                case 4:
+                    markTasks();
+                    break;
+                case 5:
+                    System.out.println("Exiting todolist!");
+                    return;
+                default:
+                    System.out.println("Enter valid number!");
+
+            }
+        }
+
     }
 
     public void showMenu(){
@@ -21,5 +47,21 @@ public class TodoList{
         System.out.println("3. Remove tasks");
         System.out.println("4. Mark tasks");
         System.out.ptinyln("5. Exit");
+    }
+
+    public int getChoice(){
+
+    }
+
+    public void addTask(){
+        System.out.println("Enter your new task: ");
+        String task = scanner.nextLine();
+        
+        if (task.length()>0) {
+            tasks.add(task);
+            System.out.println("Task added!");
+        }
+        else ("Task cannot be empty!");
+        addTask();
     }
 }
