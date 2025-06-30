@@ -10,7 +10,7 @@ public class TodoList{
         scanner = new Scanner(System.in);
     }
 
-    public void Run(){
+    public void run(){
         System.out.println("TODO LIST");
 
         while (true) {
@@ -46,7 +46,7 @@ public class TodoList{
         System.out.println("2. Add tasks");
         System.out.println("3. Remove tasks");
         System.out.println("4. Mark tasks");
-        System.out.ptinyln("5. Exit");
+        System.out.println("5. Exit");
     }
 
     public int getChoice(){
@@ -59,9 +59,9 @@ public class TodoList{
     }
 
     public void showTasks() {
-        if (task.size() == 0) {
+        if (tasks.size() == 0) {
             System.out.println("No tasks pending:)");
-            return
+            return;
         }
 
         System.out.println("ALL TASKS");
@@ -70,7 +70,7 @@ public class TodoList{
         }
     }
 
-    public void addTask(){
+    public void addTasks(){
         System.out.println("Enter your new task: ");
         String task = scanner.nextLine();
 
@@ -78,8 +78,9 @@ public class TodoList{
             tasks.add(task);
             System.out.println("Task added!");
         }
-        else ("Task cannot be empty!");
-        addTask();
+        else {
+            System.out.println("Task cannot be empty!");
+        }
     }
     public void removeTasks() {
         if (tasks.size() == 0) {
@@ -91,6 +92,11 @@ public class TodoList{
         System.out.println("Enter the number of the task you want to remove: ");
         int choice = scanner.nextInt();
         scanner.nextLine();
+        if (choice < 1 || choice > tasks.size()) {
+    System.out.println("Invalid task number.");
+    return;
+}
+
         tasks.remove(choice - 1);
         System.out.println("Task removed!");
     }
@@ -104,12 +110,17 @@ public class TodoList{
         System.out.println("Enter the number of the task you want to mark as done: ");
         int choice = scanner.nextInt();
         scanner.nextLine();
+        if (choice < 1 || choice > tasks.size()) {
+    System.out.println("Invalid task number.");
+    return;
+}
+
         String task = tasks.get(choice - 1);
         tasks.set(choice - 1, task + " [you did this one)))]");
     }
     public static void main(String[] args) {
         TodoList todoList = new TodoList();
-        todoList.Run();
+        todoList.run();
     }
 
 }
