@@ -76,6 +76,19 @@ public class TodoList{
         else ("Task cannot be empty!");
         addTask();
     }
+    public void removeTasks() {
+        if (tasks.size() == 0) {
+            System.out.println("No tasks to remove!");
+            return;
+        }
+
+        showTasks();
+        System.out.println("Enter the number of the task you want to remove: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        tasks.remove(choice - 1);
+        System.out.println("Task removed!");
+    }
 
 
 }
