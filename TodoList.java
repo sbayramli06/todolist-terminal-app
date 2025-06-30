@@ -107,6 +107,9 @@ public class TodoList{
         String task = tasks.get(choice - 1);
         tasks.set(choice - 1, task + " [you did this one)))]");
     }
-
+    public static void main(String[] args) {
+        TodoList todoList = new TodoList();
+        todoList.Run();
+    }
 
 }
