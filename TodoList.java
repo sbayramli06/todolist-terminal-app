@@ -89,6 +89,19 @@ public class TodoList{
         tasks.remove(choice - 1);
         System.out.println("Task removed!");
     }
+    public void markTasks() {
+        if (tasks.size() == 0) {
+            System.out.println("No tasks to mark!");
+            return;
+        }
+
+        showTasks();
+        System.out.println("Enter the number of the task you want to mark as done: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        String task = tasks.get(choice - 1);
+        tasks.set(choice - 1, task + " [you did this one)))]");
+    }
 
 
 }
