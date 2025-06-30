@@ -51,6 +51,11 @@ public class TodoList{
 
     public int getChoice(){
 
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        return choice;
+
     }
 
     public void showTasks() {
