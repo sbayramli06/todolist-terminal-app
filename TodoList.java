@@ -42,6 +42,7 @@ public class TodoList{
     }
 
     public void showMenu(){
+        System.out.println("MENU");
         System.out.println("1. Show all the tasks");
         System.out.println("2. Add tasks");
         System.out.println("3. Remove tasks");
